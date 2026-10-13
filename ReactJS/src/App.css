@@ -1,0 +1,168 @@
+* {
+  font-family: 'Montserrat', -system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#root {
+  --df-bg: rgba(255, 255, 255, 0.325);
+  --calc-bg: rgba(255, 255, 255, 0.3);
+  --niedowaga: #1565C0;
+  --norma: #2E7D32;
+  --nadwaga: #E65100;
+  --otyłość: #C62828;
+
+}
+
+.Title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.Calculator {
+  width: 100%;
+  max-width: 700px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: var(--calc-bg);
+  backdrop-filter: blur(500px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 3em;
+  position: relative;
+}
+
+/*
+Inputy
+*/
+
+.Calculator-Inputs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 25px;
+}
+
+.Calc-label {
+  width: 100%;
+  color: #fff;
+  font-size: 1.2em;
+}
+.Calc-Input {
+  width: 100%;
+  max-width: 200px;
+  height: 35px;
+  box-sizing: border-box;
+  border-radius: 1em;
+  outline: none;
+  border: none;
+  background: var(--df-bg);
+  filter: blur(0.5px);
+  padding: 5px;
+  margin-bottom: 30px;
+  transition: ease-in-out 0.3s;
+}
+
+.Calc-Button {
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  background: var(--df-bg);
+  border: none;
+  outline: none;
+  border-radius: 1em;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+.Calc-Button:hover,.Calc-Input:hover,.Calc-Input:focus {
+  background-color: #fff;
+}
+
+/*
+Wyniki
+*/
+
+.Result {
+  margin-top: 30px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.BMI-Bar {
+  width: 100%;
+  max-width: 600px;
+  height: 35px;
+  background: var(--df-bg);
+  border-radius: 3em;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.BMI-Value {
+  height: 100%;
+  border-radius: 3em;
+  box-sizing: border-box;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.BMI-Description {
+  margin-top: 10px;
+}
+.BMI-Color {
+  color: var(--niedowaga);
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(5px);
+  }
+  
+}
+
+.popup {
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  background-color: var(--calc-bg);
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 15px;
+  align-items: center;
+  border-radius: 1em;
+  animation:
+    slideIn 0.5s ease-in-out 0s 1,
+    slideOut 0.5s ease-in-out 3.5s 1 forwards;
+}
+
+.popup-column {
+  position: fixed;
+  left: 50%;
+  top: 610px;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}

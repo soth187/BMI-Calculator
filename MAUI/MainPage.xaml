@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BMI_Calc.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            BackgroundColor="White"
+            >
+            
+
+            <Label
+                Text="Kalkulator BMI"
+                TextColor="#2F4F4F"
+                FontSize="22"
+                FontAttributes="Bold"
+                />
+
+            <Entry 
+                x:Name="InputWaga"
+                Keyboard="Numeric"
+                Placeholder="Podaj wagę (kg)"
+                TextColor="Black"
+                />
+            
+            <Entry 
+                x:Name="InputWzrost"
+                Keyboard="Numeric"
+                Placeholder="Podaj wzrost (cm)" 
+                TextColor="Black"
+                />
+
+
+            <Button
+                Clicked="ObliczBMI"
+                Text="Oblicz" 
+                HorizontalOptions="Fill"
+                BackgroundColor="#2F4F4F"
+                CornerRadius="8"
+                TextColor="White"
+                />
+
+            <Label
+                x:Name="LabelBMI"
+                Text="BMI: 00.00"
+                TextColor="Black"
+                />
+            <Label
+                x:Name="LabelKategoria"
+                Text=""
+                TextColor="Black"
+                />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
